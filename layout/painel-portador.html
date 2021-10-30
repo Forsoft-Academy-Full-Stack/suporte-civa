@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CIVA</title>
+
+	<link rel="shortcut icon" href="./../public/img/favicon-gs.svg" type="image/x-icon">
+
+	<!-- Google Font: Poppins -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+
+	<!-- Select2 -->
+	<link rel="stylesheet" href="./../public/plugins/select2/css/select2.min.css">
+
+	<!-- Estilo icones -->
+	<link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
+
+	<!-- Estilo pagina -->
+	<link rel="stylesheet" href="./../public/dist/css/adminlte.min.css">
+
+	<!-- REQUIRED SCRIPTS ------------------------------------------------------->
+
+	<!-- jQuery -->
+	<script src="./../public/plugins/jquery/jquery.min.js" defer></script>
+	<!-- Bootstrap 4 -->
+	<script src="./../public/plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+	<!-- Select2 -->
+	<script src="./../public/plugins/select2/js/select2.full.min.js" defer></script>
+
+
+	<script src="../public/plugins/sweetalert2/sweetalert2.all.min.js" defer></script>
+	<!-- AdminLTE App -->
+	<script src="./../public/dist/js/adminlte.min.js" defer></script>
+
+	<!-- AXIOS -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+	<!-- PESQUISAR CEP -->
+	<script src="./../public/assets/js/searchCep.js" defer></script>
+	<!-- TODOS PAISES SELECT NACIONALIDADE -->
+	<script  src="./../public/assets/js/getCountry.js" defer></script>
+
+	<!-- AdminLTE for demo purposes -->
+	<script src="./../public/dist/js/demo.js" defer></script>
+	<script src="../public/assets/js/default.js" defer></script>
+	<script src="./../public/assets/js/painel_portador.js" defer></script>
+
+	
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+	<div class="wrapper">
+
+		<!-- Navbar --------------------------------------------->
+		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" data-widget="pushmenu" href="#" role="button">
+						<i class="fas fa-bars"></i>
+					</a>
+				</li>
+				<li class="nav-item d-none d-sm-inline-block">
+					<a href="" class="nav-link">Portador CIVA</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- /.navbar ------------------------------------------------------->
+
+		<!-- MENU Main Sidebar Container ------------------------------------>
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<!-- Brand Logo -->
+			<a href="./index.html" class="brand-link">
+				<img src="./../public/img/favicon-gs.svg" alt="AdminLTE Logo" class="brand-image img-circle"
+					style="opacity: .8">
+				<span class="brand-text font-weight-light">CIVA</span>
+			</a>
+
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<!-- Sidebar user panel (optional) -->
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					<div class="image">
+						<img src="./../public/img/no-user.svg" class="img-circle elevation-2" alt="User Image">
+					</div>
+					<div class="info">
+						<a href="#" class="d-block">Frank Sinatra</a>
+					</div>
+				</div>
+
+
+				<!-- Sidebar Menu -->
+				<nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+						data-accordion="false">
+						<!-- ITENS DO MENU -->
+						<li class="nav-item">
+							<a href="./index.html" class="nav-link ">
+								<i class="nav-icon fas fa-home"></i>
+								<p>
+									Home
+								</p>
+							</a>
+						</li>
+						<!-- ITEM GERENCIAR USUARIO DO MENU -->
+						<li class="nav-item menu-open">
+							<a href="#" class="nav-link active">
+								<i class="nav-icon fas fa-user-friends"></i>
+								<p>
+									Portador CIVA
+									<i class="right fas fa-angle-left"></i>
+
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item">
+									<a href="./consultar-portador.html" class="nav-link active">
+										<i class="fas fa-search nav-icon"></i>
+										<p>Consultar Portador</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./cadastrar-portador.html" class="nav-link">
+										<i class="fas fa-user-plus nav-icon"></i>
+										<p>Cadastrar Portador</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./vacinacao-internacional.html" class="nav-link">
+										<i class="fas fa-stethoscope nav-icon"></i>
+										<p>Vacinação internacional</p>
+									</a>
+								</li>
+						</li>
+					</ul>
+					</li>
+
+					<!-- ITEM RELATORIO USUARIO DO MENU -->
+					<li class="nav-item">
+						<a href="./relatorio.html" class="nav-link">
+							<i class="nav-icon fas fa-chart-pie"></i>
+							<p>
+								Relatorio
+							</p>
+						</a>
+					</li>
+
+					<!-- ITEM PERFIL DO MENU -->
+					<li class="nav-item">
+						<a href="#" class="nav-link">
+							<i class="nav-icon fas fa-user-circle"></i>
+							<p>
+								Perfil
+								<i class="right fas fa-angle-left"></i>
+
+							</p>
+						</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item">
+								<a href="./meus-dados.html" class="nav-link">
+									<i class="fas fa-address-card nav-icon"></i>
+									<p>
+										Meus dados
+									</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="./idioma.html" class="nav-link">
+									<i class="fas fa-language nav-icon"></i>
+									<p>
+										Mudar Idioma
+									</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="./manual.html" class="nav-link">
+									<i class="fas fa-question-circle nav-icon"></i>
+									<p>
+										Manual CIVA
+									</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="./solicitacoes.html" class="nav-link">
+									<i class="fas fa-inbox nav-icon"></i>
+									<p>
+										Solicitações pendentes
+									</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">
+									<i class="fas fa-sign-out-alt nav-icon"></i>
+									<p>
+										Sair
+									</p>
+								</a>
+							</li>
+						</ul>
+					</li>
+					</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar ------------------------------------------------------>
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -------------------------->
+		<div class="content-wrapper">
+
+			<!-- Content Header (Page header) -->
+			<div class="content-header">
+				<div class="container-fluid">
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1 class="m-0">Painel portador CIVA</h1>
+						</div><!-- /.col -->
+						<div class="col-sm-6">
+							<ol class="breadcrumb float-sm-right">
+								<li class="breadcrumb-item"><a href="consultar-portador.html">Voltar</a></li>
+								<li class="breadcrumb-item active">Consultar portador</li>
+							</ol>
+						</div>
+					</div><!-- /.row -->
+				</div><!-- /.container-fluid -->
+			</div>
+
+			<!-- Main content -->
+			<div class="content">
+				<div class="container-fluid">
+					<!---------------------------------------------------------------->
+
+<!-- DADOS PORTADOR -->
+<div class="row">
+	<div class="col-12">
+		<div class="card card-primary">
+			<div class="card-header">
+				<h3 class="card-title">Dados portador</h3>
+			</div>
+			<form id="form-painel-portador" class="card-body">
+				<div class="row">
+					<div class="form-group col-xl-6">
+						<label for="nome">Nome</label>
+						<input type="text" class="form-control" id="nome" name="nome"
+							placeholder="Ex: Frank" value="Elis">
+					</div>
+					<div class="form-group col-xl-6">
+						<label for="sobrenome">Sobrenome</label>
+						<input type="text" class="form-control" id="sobrenome" name="sobrenome"
+							placeholder="Ex: Sinatra" value="Regina">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xl-6">
+						<label for="datanascimento">Data de nascimento</label>
+						<input type="date" class="form-control" id="datanascimento"
+							name="datanascimento" value="1945-05-17">
+					</div>
+					<div class="form-group col-xl-6">
+						<label for="documento">Identidade</label>
+						<input type="text" class="form-control" value="884.054.264-05"
+							id="documento" name="documento">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xl-12">
+						<label for="codigociva">Código CIVA</label>
+						<input type="text" class="form-control" id="codigociva" name="codigociva" value="BR5521123456789" disabled>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="form-group col-xl-12">
+						<label for="nacionalidade">Nacionalidade</label>
+						<select class="select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" id="nacionalidade" name="nacionalidade">
+							<option value="BR">Brazil</option>
+						</select>
+					</div>
+					<div class="form-group col-12">
+						<label for="codigopostal">CEP</label>
+						<input type="text" class="form-control" id="codigopostal"
+							name="codigopostal" placeholder="Ex: 000000-000" maxlength="9"
+							value="20520-054">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xl-6">
+						<label for="logradouro">Logradouro</label>
+						<label for="exampleFormControlInput1"></label>
+						<input type="text" class="form-control" id="logradouro" name="logradouro"
+							placeholder="Ex: Avinida Rio Branco" value="Rua Conde de Bonfim">
+					</div>
+					<div class="form-group col-xl-6">
+						<label for="numerorua">Número</label>
+						<input type="text" class="form-control" id="numerorua" name="numerorua"
+							placeholder="Ex: 12" value="102">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-12">
+						<label for="complemento">Complemento</label>
+						<input type="text" class="form-control" id="complemento" name="complemento"
+							placeholder="Ex: Casa" value="Casa">
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="form-group col-xl-6">
+						<label for="bairro">Bairro</label>
+						<input type="text" class="form-control" id="bairro" name="bairro"
+							placeholder="Ex: Vila Isabel" value="Tijuca">
+					</div>
+					<div class="form-group col-xl-6">
+						<label for="cidade">Cidade</label>
+						<input type="text" class="form-control" id="cidade" name="cidade"
+							placeholder="Ex: Rio de Janeiro" value="Rio de Janeiro" disabled>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-12">
+						<label for="estado">Estado</label>
+						<input type="text" class="form-control" id="estado" name="estado"
+							placeholder="Ex: RJ" value="RJ" disabled>
+					</div>
+				</div>
+
+				<hr>
+				<div class="row">
+					<div class="form-group col-xl-6">
+						<label for="contato">Contato</label>
+						<input type="text" class="form-control" id="contato" name="contato"
+							placeholder="Ex: 21912345678" value="21965138761">
+					</div>
+					<div class="form-group col-xl-6">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" id="email" name="email"
+							placeholder="Ex: nome@mail.com" value="elisr@gmail.com">
+					</div>
+				</div>
+				<hr>
+				<div class="d-flex justify-content-between align-items-center">
+					<div id="toggle-user">
+						<div class="custom-control custom-switch">
+							<input type="checkbox" class="custom-control-input bg-success"
+								id="customSwitch2" checked>
+							<label class="custom-control-label" for="customSwitch2"></label><b
+								class="text-primary">ATIVADO</b>
+						</div>
+					</div>
+					<a href="./cadastrar-vacinacao.html" class="btn btn-primary">Vincular Documento</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- /.row -->
+
+<!-- HISTORICO DE VACINAÇÃO -->
+<div class="row">
+<div class="col-12 mb-4">
+	<div class="card card-primary">
+		<div class="card-header">
+			<h3 class="card-title">Historico de vacinação</h3>
+
+			<div class="card-tools">
+				<div class="input-group input-group-sm" style="width: 150px;">
+
+					<div class="input-group-append">
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.card-header -->
+		<div class="card-body table-responsive p-0">
+			<table class="table table-hover text-nowrap">
+				<thead>
+					<tr>
+						<th>Vacina</th>
+						<th>Láboratório</th>
+						<th>Dose</th>
+						<th>País</th>
+						<th>Data</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Coronavac</td>
+						<td>Butantan</td>
+						<td>1ª Dose</td>
+						<td>Brasil</td>
+						<td>20/03/2021</td>
+						<td><a href="./painel-vacinacao.html"
+								class="btn btn-block btn-primary btn-sm">Ver mais</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Coronavac</td>
+						<td>Butantan</td>
+						<td>1ª Dose</td>
+						<td>Brasil</td>
+						<td>20/03/2021</td>
+						<td><a href="./painel-vacinacao.html"
+								class="btn btn-block btn-primary btn-sm">Ver mais</a>
+						</td>
+					</tr>
+					<tr>
+						<td>Coronavac</td>
+						<td>Butantan</td>
+						<td>1ª Dose</td>
+						<td>Brasil</td>
+						<td>20/03/2021</td>
+						<td><a href="./painel-vacinacao.html"
+								class="btn btn-block btn-primary btn-sm">Ver mais</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- /.card-body -->
+	</div>
+</div>
+</div>
+
+<div class="row">
+	<div class="col-12 mb-4">
+		<button type="button" id="salvar" class="btn btn-primary btn-lg">Salvar</button>
+	</div>
+</div>
+
+					<!-- /.row -->
+				</div><!-- /.container-fluid -->
+			</div>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+
+		<!-- Main Footer -->
+		<footer class="main-footer">
+			<!-- Default to the left -->
+			<strong><img src="./../public/img/icon-civa-footer-darkblue.svg" alt="logo civa" width="70px">&nbsp by <a
+					href="https://www.forsoftacademy.com.br/" target="_blank">Forsoft Academy</a></strong>
+		</footer>
+	</div>
+	<!-- ./wrapper -->
+
+</body>
+
+</html>
