@@ -15,14 +15,42 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <!-- Select2 -->
-    <link rel="stylesheet" href="./../public/plugins/select2/css/select2.min.css">
+    	<!-- Select2 -->
+	<link rel="stylesheet" href="./../public/plugins/select2/css/select2.min.css">
 
-    <!-- Estilo icones -->
-    <link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
+	<!-- Estilo icones -->
+	<link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
 
-    <!-- Estilo pagina -->
-    <link rel="stylesheet" href="./../public/dist/css/adminlte.min.css">
+	<!-- Estilo pagina -->
+	<link rel="stylesheet" href="./../public/dist/css/adminlte.min.css">
+
+	<!-- REQUIRED SCRIPTS ------------------------------------------------------->
+
+
+    <script src="../public/plugins/sweetalert2/sweetalert2.all.min.js" defer></script>
+	<!-- jQuery -->
+	<script src="./../public/plugins/jquery/jquery.min.js" defer></script>
+	<!-- Bootstrap 4 -->
+	<script src="./../public/plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+	<!-- Select2 -->
+	<script src="./../public/plugins/select2/js/select2.full.min.js" defer></script>
+
+
+	
+	<!-- AdminLTE App -->
+	<script src="./../public/dist/js/adminlte.min.js" defer></script>
+
+	<!-- AXIOS -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+	<!-- PESQUISAR CEP -->
+	<script src="./../public/assets/js/searchCep.js" defer></script>
+	<!-- TODOS PAISES SELECT NACIONALIDADE -->
+	<script  src="./../public/assets/js/getCountry.js" defer></script>
+
+	<!-- AdminLTE for demo purposes -->
+	<script src="./../public/dist/js/demo.js" defer></script>
+	<script src="../public/assets/js/default.js" defer></script>
+    <script src="./../public/assets/js/meus-dados-suporte-civa.js" defer></script>
 
 
 </head>
@@ -246,7 +274,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./meus-dados.html" class="nav-link">
+                                    <a href="./meus-dados.html" class="nav-link active">
                                         <i class="fas fa-address-card nav-icon"></i>
                                         <p>
                                             Meus dados
@@ -262,7 +290,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./manual.html" class="nav-link active">
+                                    <a href="./manual.html" class="nav-link">
                                         <i class="fas fa-question-circle nav-icon"></i>
                                         <p>
                                             Manual CIVA
@@ -294,10 +322,6 @@
             <!-- /.sidebar ------------------------------------------------------>
         </aside>
 
-
-
-
-
         <!-- Content Wrapper. Contains page content -------------------------->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -322,19 +346,10 @@
             </div>
             <!-- /.content-header ---------------------------------------------->
 
-
-
-
-
-
-
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
                     <!---------------------------------------------------------------->
-
-
-
                     <div class="row">
                         <div class="col-12 mb-3">
 
@@ -344,7 +359,7 @@
                                     <h3 class="card-title">Meus dados</h3>
                                 </div>
 
-                                <form id="meus-dados">
+                                <form id="form-meus-dados">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-xl-6">
@@ -368,8 +383,8 @@
                                             <div class="form-group col-xl-6">
                                                 <label for="nacionalidade">Nacionalidade</label>
                                                 <select class="select2 select2-hidden-accessible" style="width: 100%;"
-                                                    tabindex="-1" aria-hidden="true" id="nacionalidade3"
-                                                    name="nacionalidade3">
+                                                    tabindex="-1" aria-hidden="true" id="nacionalidade"
+                                                    name="nacionalidade">
                                                     <option value="BR">Brazil</option>
                                                 </select>
                                             </div>
@@ -601,7 +616,7 @@
 
                 <div class="row">
                     <div class="col-12 mb-4">
-                        <button type="submit" class="btn btn-primary btn-lg" form="form-meus-dados">Salvar</button>
+                        <button type="button" id="salvar" class="btn btn-primary btn-lg" >Salvar</button>
                     </div>
                 </div>
 
@@ -674,39 +689,7 @@
     <script src="./../public/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="./../public/dist/js/demo.js"></script>
-
-    <script>
-        $(function () {
-            $('.select2').select2()
-        });
-    </script>
-    <script>
-        function tratarCampos() {
-            let erro = false;
-            let campos = ['name', 'surname', 'date-birth', 'identity', 'postal-code', 'cod-civa', 'logrd-name', 'telf', 'email'];
-
-            for (i = 0; i < campos.length; i++) {
-                if (document.getElementById(campos[i]).value == '') {
-                    erro = true;
-                }
-            }
-
-            if (erro) {
-                alert('Todos os campos devem ser preenchidos!');
-            } else {
-                // Exibe o modal desejado, baseado no id definido.
-                $('#modal-default').modal('show');
-                console.log('funcionou');
-                event.preventDefault();
-
-            }
-
-            return !erro;
-        }
-
-        document.getElementById('form-meus-dados').onsubmit = tratarCampos;
-    </script>
-
+  
 </body>
 
 </html>
