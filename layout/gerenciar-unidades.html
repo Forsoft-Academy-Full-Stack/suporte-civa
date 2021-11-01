@@ -21,7 +21,31 @@
 
     <!-- Estilo pagina -->
     <link rel="stylesheet" href="../public/dist/css/adminlte.min.css">
-    <script src="js.js" defer></script>
+    
+    <script src="../public/plugins/sweetalert2/sweetalert2.all.min.js" defer></script>
+	<!-- jQuery -->
+	<script src="./../public/plugins/jquery/jquery.min.js" defer></script>
+	<!-- Bootstrap 4 -->
+	<script src="./../public/plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+	<!-- Select2 -->
+	<script src="./../public/plugins/select2/js/select2.full.min.js" defer></script>
+
+
+	
+	<!-- AdminLTE App -->
+	<script src="./../public/dist/js/adminlte.min.js" defer></script>
+
+	<!-- AXIOS -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+	<!-- PESQUISAR CEP -->
+	<script src="./../public/assets/js/searchCep.js" defer></script>
+	<!-- TODOS PAISES SELECT NACIONALIDADE -->
+	<script  src="./../public/assets/js/getCountry.js" defer></script>
+
+	<!-- AdminLTE for demo purposes -->
+	<script src="./../public/dist/js/demo.js" defer></script>
+	<script src="../public/assets/js/default.js" defer></script>
+    <script src="./../public/assets/js/gerenciar-unidade.js" defer></script>
 
 </head>
 
@@ -323,121 +347,128 @@
                                     <h3 class="card-title">Dados Unidade</h3>
                                 </div>
                                 <!-- /.card-header -->
-                                <!-- Incio do form -->
-                                <form action="#" id="form-save" method="post" novalidate="novalidate">
-                                    <div class="p-2">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="name-uni">Nome da unidade</label>
-                                                <input type="text" class="form-control" id="name-uni" value="Hospital pan" name="nome-unidade" disabled>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="doc-registro">Documentação de registro</label>
-                                                <input type="text" class="form-control" id="doc-registro" value="24.42867-34/5" name="doc-registro" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="natureza">Natureza</label>
-                                                <select class="form-control" id="natureza" name="natureza" disabled>
-                                                    <option value="" disabled>Selecionar</option>
-                                                    <option value="Publica" selected>Publica</option>
-                                                    <option value="Privada">Privada</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="tipo-estabe">Tipo de estabelecimento</label>
-                                                <select class="form-control" id="tipo-estabe" name="tipo-estabe" disabled>
-                                                    <option value="" disabled>Selecionar</option>
-                                                    <option value="Hospital" selected>Hospital</option>
-                                                    <option value="Farmacia">Farmacia</option>
-                                                    <option value="Posto de saúde">Posto de saúde</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="country">País</label>
-                                                <select class="form-control" id="country" name="pais" disabled>
-                                                    <option value="" disabled>Selecionar</option>
-                                                    <option value="Brasil" selected>Brasil</option>
-                                                    <option value="Estados Unidos">Estados Unidos</option>
-                                                    <option value="Argentina">Argentina</option>
-                                                    <option value="Inglaterra">Inglaterra</option>
-                                                    <option value="Japão">Japão</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-6">
-                                                <label for="postal-code">CEP</label>
-                                                <input type="text" class="form-control" id="postal-code" name="cep" value="22758-006" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-6">
-                                                <label for="logrd-name">Endereço</label>
-                                                <input type="text" class="form-control" id="logrd-name" name="endereco" value="Av Rio Branco" disabled>
-                                            </div>
-                                            <div class="form-group col-6">
-                                                <label for="logrd-num">Numero</label>
-                                                <input type="number" class="form-control" id="logrd-num" name="numero" value="60" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-6">
-                                                <label for="complemento">Complemento</label>
-                                                <input type="text" class="form-control" id="complemento" name="complemento" value="Rio Branco" disabled>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="municipio">Municipio</label>
-                                                <select class="form-control" id="municipio" name="municipio" disabled>
-                                                    <option disabled>Selecionar</option> 
-                                                    <option>Niteroi</option>
-                                                    <option>São Gonçalo</option>
-                                                    <option selected>Rio de Janeiro</option>
-                                                    <option>Itaborai</option>
-                                                    <option>Marica</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="bairro">Bairro</label>
-                                                <select class="form-control" id="bairro" name="bairro" disabled>
-                                                    <option disabled>Selecionar</option> 
-                                                    <option selected>Niteroi</option>
-                                                    <option>São Gonçalo</option>
-                                                    <option>Rio de Janeiro</option>
-                                                    <option>Itaborai</option>
-                                                    <option>Marica</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="state">Estado</label>
-                                                <select class="form-control" id="state" name="estado" disabled>
-                                                    <option disabled>Selecionar</option>
-                                                    <option selected>Rio de Janeiro</option>
-                                                    <option>São Paulo</option>
-                                                    <option>Minas Gerais</option>
-                                                    <option>Rio Grande do Sul</option>
-                                                    <option>Bahia</option>
-                                                </select>
-                                            </div>
-                                        </div>                                       
+                              
+                                <form id="form-meus-dados">
+                                    <div class="card-body">
                                         <div class="row">
                                             <div class="form-group col-xl-6">
-                                                <label for="telf">Contato</label>
-                                                <input type="number" class="form-control" id="telf" name="telf" value="21 9 8788-9894">
+                                                <label for="name">Nome da unidade</label>
+                                                <input type="text" id="name-unidade" name="name-unidade" class="form-control"
+                                                    value="Hospital e maternidade santos" >
                                             </div>
+                                            <div class="form-group col-xl-6">
+                                                <label for="documento-registro">Documento de registro</label>
+                                                <input type="text" id="documento-registro" name="documento-registro" class="form-control"
+                                                    value="24.456456/5" >
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-xl-6">
+                                                <label for="natureza">Natureza</label>
+                                                <select  class="select2 select2-hidden-accessible" style="width: 100%;"
+                                                    tabindex="-1" aria-hidden="true" id="natureza" name="natureza">
+                                                    <option value="pub" >Selecionar</option>
+                                                    <option value="pub" select  >Pública</option>
+                                                    <option value="priv" >Privada</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-xl-6">
+                                                <label for="tipo-estabelecimento">Tipo de Estabelecimento</label>
+                                                <select  class="select2 select2-hidden-accessible" style="width: 100%;"
+                                                    tabindex="-1" aria-hidden="true" id="tipo-estabelecimento"
+                                                    name="tipo-estabelecimento">
+                                                    <option value="hospital" selected >Hospital</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="form-group col-xl-12">
+                                                <label for="pais">País</label>
+                                                <input type="text" id="pais" name="pais" class="form-control"
+                                                    value="Brazil" >
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="row">
+    
+                                            <div class="form-group col-xl-12">
+                                                <label for="codigopostal">CEP</label>
+                                                <input type="text" class="form-control" id="codigopostal"
+                                                    name="codigopostal" placeholder="Ex: 000000-000" maxlength="9"
+                                                    value="20520-054" >
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="form-group col-xl-6">
+                                                <label for="endereco">Endereço</label>
+                                                <input type="text" id="endereco" name="endereco" class="form-control"
+                                                    value="Vila peri" >
+                                            </div>
+
+                                            <div class="form-group col-xl-6">
+                                                <label for="numero">Número</label>
+                                                <input type="number" class="form-control" id="numero"
+                                                    name="numero" placeholder="Ex: 000000-000" maxlength="9"
+                                                    value="123" >
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-xl-6">
+                                                <label for="complemento">Complemento</label>
+                                                <input type="text" id="complemento" name="complemento" class="form-control"
+                                                    value="Apto 1107 bloco 2" >
+                                            </div>
+
+                                            <div class="form-group col-xl-6">
+                                                <label for="bairro">Bairro</label>
+                                                <input type="text" class="form-control" id="bairro"
+                                                    name="bairro" placeholder="Ex: 000000-000" maxlength="9"
+                                                    value="Queimados" >
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-xl-6">
+                                                <label for="municipio">Municipio</label>
+                                                <input type="text" id="municipio" name="municipio" class="form-control"
+                                                    value="Niterói" >
+                                            </div>
+
+                                            <div class="form-group col-xl-6">
+                                                <label for="estado">Estado</label>
+                                                <input type="text" class="form-control" id="estado"
+                                                    name="estado" placeholder="Ceará" maxlength="9"
+                                                    value="Rio de Janeiro" >
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-xl-6">
+                                                <label for="contato1">Contato</label>
+                                                <input type="tel" class="form-control" id="contato1" name="contato1"
+                                                    placeholder="Ex: 000000-000" maxlength="9" value="2199887755" >
+                                            </div>
+
                                             <div class="form-group col-xl-6">
                                                 <label for="locacao">Locação</label>
-                                                <select class="form-control" id="locacao" name="locacao" disabled>
-                                                    <option value="" disabled>Selecionar</option>
-                                                    <option value="Publica" selected>Publica</option>
-                                                    <option value="Privada">Privada</option>
-                                                </select>
+                                                <input type="text" id="locacao" name="locacao" class="form-control"
+                                                    value="Sua Locacao" >
                                             </div>
                                         </div>
                                     </div>
+
                                 </form>
                                 <!-- /.form ending -->
                             </div>
@@ -509,7 +540,7 @@
 
                 <div class="row">
                     <div class="col-12 mb-4">
-                        <button type="submit" class="btn btn-primary btn-lg" form="form-gerenciar-unidade">Salvar</button>
+                        <button type="submit" class="btn btn-primary btn-lg" id="salvar">Salvar</button>
                     </div>
                 </div>
 
