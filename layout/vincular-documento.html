@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
     <!-- Estilo pagina -->
     <link rel="stylesheet" href="./../public/dist/css/adminlte.min.css">
-   
+
     <!-- REQUIRED SCRIPTS ------------------------------------------------------->
     <!-- jQuery -->
     <script src="../public/plugins/sweetalert2/sweetalert2.all.min.js" defer></script>
@@ -42,12 +42,12 @@
     <!-- AdminLTE App -->
     <script src="./../public/dist/js/adminlte.min.js" defer></script>
 
-     <!-- AXIOS -->
-     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
-     <!-- PESQUISAR CEP -->
-     <script src="../public/assets/js/searchCep.js" defer></script>
-     <!-- TODOS PAISES SELECT NACIONALIDADE -->
-     <script  src="../public/assets/js/getCountry.js" defer></script>
+    <!-- AXIOS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <!-- PESQUISAR CEP -->
+    <script src="../public/assets/js/searchCep.js" defer></script>
+    <!-- TODOS PAISES SELECT NACIONALIDADE -->
+    <script src="../public/assets/js/getCountry.js" defer></script>
 
     <!-- AdminLTE for demo purposes -->
     <script src="./../public/dist/js/demo.js" defer></script>
@@ -55,7 +55,7 @@
 
     <script src="../public/assets/js/default.js" defer></script>
     <script src="./../public/assets/js/vincular-documento.js" defer></script>
-   
+
 
 </head>
 
@@ -141,6 +141,46 @@
                         </li>
                     </ul>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-hospital nav-icon"></i>
+                            <p>
+                                Unidade
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./gerenciar-unidade.html" class="nav-link active">
+                                    <i class="fas fa-cog nav-icon"></i>
+                                    <p>Gerenciar Unidade</p>
+                                </a>
+                            </li>
+                    </li>
+                    </ul>
+                    </li>
+
+                    <!-- gerenciar vacinação -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-stethoscope nav-icon"></i>
+                            <p>
+                                Vacinação
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./consultar-vacinacao.html" class="nav-link">
+                                    <i class="fas fa-search nav-icon"></i>
+                                    <p>Consultar Vacinação</p>
+                                </a>
+                            </li>
+                    </li>
+                    </ul>
+                    </li>
+
 
                     <!-- ITEM RELATORIO USUARIO DO MENU -->
                     <li class="nav-item">
@@ -244,57 +284,57 @@
                                 <!-- /.card-header -->
                                 <!-- form start -->
                                 <form id="form-meus-dados" class="card-body">
-                                  
-                                        <div class="row">
-                                            <div class="form-group col-12">
-                                                <label for="passaporte">Tipo de Documento</label>
-                                                <select id="passaporte" name="passaporte"
-                                                    class="select2 select2-hidden-accessible" style="width: 100%;"
-                                                    tabindex="-1" aria-hidden="true">
-                                                    <option selected disabled id="country-select">Selecionar</option>
-                                                    <option value="passaporte">Passaporte</option>
-                                                    <option value="identidade">Identidade</option>
-                                                    
-                                                </select>
-                                            </div>
-                                        </div>
-            
-                                        <hr>
-                                        <div class="row">
-                                            <div class="form-group col-12">
-                                                <label for="documento">Documento</label>
-                                                <input type="text" id="documento" name="documento" class="form-control"
-                                                    placeholder="000.000.000-00">
-                                            </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-12">
+                                            <label for="passaporte">Tipo de Documento</label>
+                                            <select id="passaporte" name="passaporte"
+                                                class="select2 select2-hidden-accessible" style="width: 100%;"
+                                                tabindex="-1" aria-hidden="true">
+                                                <option selected disabled id="country-select">Selecionar</option>
+                                                <option value="passaporte">Passaporte</option>
+                                                <option value="identidade">Identidade</option>
+
+                                            </select>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
-                        </div>
 
-                        <div class="col-12 mb-4">
-                            <button type="button" id="cadastro" class="btn btn-primary btn-lg" data-toggle="modal"
-                                data-target="#modal1" data-whatever="@getbootstrap">
-                                Cadastrar
-                            </button>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="form-group col-12">
+                                            <label for="documento">Documento</label>
+                                            <input type="text" id="documento" name="documento" class="form-control"
+                                                placeholder="000.000.000-00">
+                                        </div>
+                                    </div>
+                            </div>
+                            </form>
                         </div>
-                        
-                        <!-- /.row -->
-                        <!-- /.row -->
-                    </div><!-- /.container-fluid -->
-                </div>
-                <!-- /.content -->
+                    </div>
+
+                    <div class="col-12 mb-4">
+                        <button type="button" id="cadastro" class="btn btn-primary btn-lg" data-toggle="modal"
+                            data-target="#modal1" data-whatever="@getbootstrap">
+                            Cadastrar
+                        </button>
+                    </div>
+
+                    <!-- /.row -->
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
             </div>
-            <!-- /.content-wrapper -->
+            <!-- /.content -->
         </div>
-            <!-- Main Footer -->
-            <footer class="main-footer">
-                <!-- Default to the left -->
-                <strong><img src="./../public/img/icon-civa-footer-darkblue.svg" alt="logo civa" width="70px">&nbsp by
-                    <a href="https://www.forsoftacademy.com.br/" target="_blank">Forsoft Academy</a></strong>
-            </footer>
-        </div>
-        <!-- ./wrapper -->
+        <!-- /.content-wrapper -->
+    </div>
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- Default to the left -->
+        <strong><img src="./../public/img/icon-civa-footer-darkblue.svg" alt="logo civa" width="70px">&nbsp by
+            <a href="https://www.forsoftacademy.com.br/" target="_blank">Forsoft Academy</a></strong>
+    </footer>
+    </div>
+    <!-- ./wrapper -->
     </div>
 
 </body>
