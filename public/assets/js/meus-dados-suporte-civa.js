@@ -34,3 +34,6 @@ $("#salvar").click(function () {
         swalAlertError(title, text, callback);
     }
 });
+
+
+pegarPaises("nacionalidade");
