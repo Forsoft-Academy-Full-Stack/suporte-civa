@@ -26,7 +26,30 @@
   <!-- Estilo pagina -->
   <link rel="stylesheet" href="./../public/dist/css/adminlte.min.css">
 
-  <script src="js.js" defer></script>
+  <script src="../public/plugins/sweetalert2/sweetalert2.all.min.js" defer></script>
+	<!-- jQuery -->
+	<script src="./../public/plugins/jquery/jquery.min.js" defer></script>
+	<!-- Bootstrap 4 -->
+	<script src="./../public/plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+	<!-- Select2 -->
+	<script src="./../public/plugins/select2/js/select2.full.min.js" defer></script>
+
+
+	
+	<!-- AdminLTE App -->
+	<script src="./../public/dist/js/adminlte.min.js" defer></script>
+
+	<!-- AXIOS -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+	<!-- PESQUISAR CEP -->
+	<script src="./../public/assets/js/searchCep.js" defer></script>
+	<!-- TODOS PAISES SELECT NACIONALIDADE -->
+	<script  src="./../public/assets/js/getCountry.js" defer></script>
+
+	<!-- AdminLTE for demo purposes -->
+	<script src="./../public/dist/js/demo.js" defer></script>
+	<script src="../public/assets/js/default.js" defer></script>
+    <script src="./../public/assets/js/cadastrar-unidade.js" defer></script>
 
 </head>
 
@@ -345,107 +368,132 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="form-page">
-                  <div class="p-2">
-                    <div class="row">
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Nome da unidade</label>
-                        <input type="text" class="form-control" placeholder="Hospital Pan" id="name">
-                      </div>
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Documentação de Registro</label>
-                        <input type="text" class="form-control" id="document" placeholder="00.00000-00/0">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Natureza</label>
-                        <select class="select2 select2-hidden-accessible" id="nature" style="width: 100%;" tabindex="-1"
-                          aria-hidden="true">
-                          <option selected disabled>Selecionar</option>
-                          <option>Pública</option>
-                          <option>Privada</option>
-                        </select>
-                      </div>
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Tipo de Estabelecimento</label>
-                        <select class="select2 select2-hidden-accessible" id="estab-name" style="width: 100%;"
-                          tabindex="-1" aria-hidden="true">
-                          <option selected disabled>Selecionar</option>
-                          <option>Hospital</option>
-                          <option>Posto de Saúde</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <hr>
-                    <div class="row">
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Pais</label>
-                        <input type="text" class="form-control" id="pais">
-                      </div>
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">CEP</label>
-                        <input type="text" class="form-control" id="postal-code" onblur="getUser(); return false">
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Endereço</label>
-                        <input type="text" class="form-control" id="logrd-name">
+                <form id="form-meus-dados">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="form-group col-xl-6">
+                              <label for="name">Nome da unidade</label>
+                              <input type="text" id="name-unidade" name="name-unidade" class="form-control"
+                                  value="" >
+                          </div>
+                          <div class="form-group col-xl-6">
+                              <label for="documento-registro">Documento de registro</label>
+                              <input type="text" id="documento-registro" name="documento-registro" class="form-control"
+                                  value="" >
+                          </div>
                       </div>
 
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Numero</label>
-                        <input type="text" class="form-control" id="logrd-num">
+                      <div class="row">
+                          <div class="form-group col-xl-6">
+                              <label for="natureza">Natureza</label>
+                              <select  class="select2 select2-hidden-accessible" style="width: 100%;"
+                                  tabindex="-1" aria-hidden="true" id="natureza" name="natureza">
+                                  <option value="" selected disabled >Selecionar</option>
+                                  <option value="pub" select  >Pública</option>
+                                  <option value="priv" >Privada</option>
+                              </select>
+                          </div>
+                          <div class="form-group col-xl-6">
+                              <label for="tipo-estabelecimento">Tipo de Estabelecimento</label>
+                              <select  class="select2 select2-hidden-accessible" style="width: 100%;"
+                                  tabindex="-1" aria-hidden="true" id="tipo-estabelecimento"
+                                  name="tipo-estabelecimento">
+                                  <option value="hospital" selected >Hospital</option>
+                              </select>
+                          </div>
+
                       </div>
-                    </div>
 
 
-                    <div class="row">
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Complemento</label>
-                        <input type="text" class="form-control" id="complemento">
-                      </div>
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Bairro</label>
-                        <input type="text" class="form-control" id="local">
-                      </div>
-                    </div>
+                      <hr>
 
-                    <div class="row">
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Municipio</label>
-                        <input type="text" class="form-control" id="city">
+                      <div class="row">
+                          <div class="form-group col-xl-12">
+                              <label for="pais">País</label>
+                              <input type="text" id="pais" name="pais" class="form-control"
+                                  value="" >
+                          </div>
                       </div>
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Estado</label>
-                        <input type="text" class="form-control" id="state">
+
+                      
+                      <div class="row">
+
+                          <div class="form-group col-xl-12">
+                              <label for="codigopostal">CEP</label>
+                              <input type="text" class="form-control" id="codigopostal"
+                                  name="codigopostal" placeholder="Ex: 000000-000" maxlength="9"
+                                  value="" >
+                          </div>
                       </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Contato</label>
-                        <input type="text" class="form-control" id="telf" placeholder="21965138761">
+
+
+                      <div class="row">
+                          <div class="form-group col-xl-6">
+                              <label for="endereco">Endereço</label>
+                              <input type="text" id="endereco" name="endereco" class="form-control"
+                                  value="" >
+                          </div>
+
+                          <div class="form-group col-xl-6">
+                              <label for="numero">Número</label>
+                              <input type="number" class="form-control" id="numero"
+                                  name="numero" placeholder="Ex: 000000-000" maxlength="9"
+                                  value="" >
+                          </div>
                       </div>
-                      <div class="form-group col-xl-6">
-                        <label for="exampleFormControlInput1">Locação</label>
-                        <select class="select2 select2-hidden-accessible" id="locacao" style="width: 100%;"
-                          tabindex="-1" aria-hidden="true">
-                          <option selected disabled>Selecionar</option>
-                          <option>Fixa</option>
-                          <option>Móvel</option>
-                        </select>
+
+                      <div class="row">
+                          <div class="form-group col-xl-6">
+                              <label for="complemento">Complemento</label>
+                              <input type="text" id="complemento" name="complemento" class="form-control"
+                                  value="" >
+                          </div>
+
+                          <div class="form-group col-xl-6">
+                              <label for="bairro">Bairro</label>
+                              <input type="text" class="form-control" id="bairro"
+                                  name="bairro" placeholder="Ex: 000000-000" maxlength="9"
+                                  value="" >
+                          </div>
+
                       </div>
-                    </div>
+
+                      <div class="row">
+                          <div class="form-group col-xl-6">
+                              <label for="municipio">Municipio</label>
+                              <input type="text" id="municipio" name="municipio" class="form-control"
+                                  value="" >
+                          </div>
+
+                          <div class="form-group col-xl-6">
+                              <label for="estado">Estado</label>
+                              <input type="text" class="form-control" id="estado"
+                                  name="estado" placeholder="Ceará" maxlength="9"
+                                  value="" >
+                          </div>
+
+                      </div>
+
+                      <div class="row">
+                          <div class="form-group col-xl-6">
+                              <label for="contato1">Contato</label>
+                              <input type="tel" class="form-control" id="contato1" name="contato1"
+                                  placeholder="2199887755" maxlength="9" value="" >
+                          </div>
+
+                          <div class="form-group col-xl-6">
+                              <label for="locacao">Locação</label>
+                              <input type="text" id="locacao" name="locacao" class="form-control"
+                                  value="" >
+                          </div>
+                      </div>
                   </div>
-                </form>
+
+              </form>
               </div>
               <div class="row">
                 <div class="col-12 mb-4">
-                  <button type="submit" class="btn btn-primary btn-lg" form="form-page">Salvar</button>
+                  <button type="button" class="btn btn-primary btn-lg" id="salvar">Salvar</button>
                 </div>
               </div>
             </div>
