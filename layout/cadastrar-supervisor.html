@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>CIVA - Cadastrar Portador</title>
+        <title>CIVA - Cadastrar Supervisor</title>
 
         <link rel="shortcut icon" href="../public/img/favicon-gs.svg" type="image/x-icon">
 
@@ -36,7 +36,7 @@
                         </a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="" class="nav-link">Cadastrar portador</a>
+                        <a href="" class="nav-link">Cadastrar supervisor</a>
                     </li>
                 </ul>
             </nav>
@@ -77,7 +77,7 @@
                       </li>
                       <!-- ITEM GERENCIAR USUARIO DO MENU -->
           
-                      <li class="nav-item menu-open">
+                      <li class="nav-item  menu-open">
                         <a href="#" class="nav-link">
                             <!-- <i class="nav-icon fas fa-user-friends"></i> -->
                             <p>Suporte Civa
@@ -86,7 +86,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                        <li class="nav-item menu-open">
+                        <li class="nav-item">
                           <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-user-friends"></i>
                             <p>
@@ -102,7 +102,7 @@
                               </a>
                             </li>
                             <li class="nav-item">
-                              <a href="./cadastrar-portador.html" class="nav-link active">
+                              <a href="./cadastrar-portador.html" class="nav-link">
                                 <i class="fas fa-user-plus nav-icon"></i>
                                 <p>Cadastrar Portador</p>
                               </a>
@@ -163,7 +163,7 @@
                       </li>
                   </ul>
                   <ul class="nav nav-treeview">
-                    <li class="nav-item ">
+                    <li class="nav-item  menu-open">
                         <a href="#" class="nav-link">
                             <i class="fas fa-user-friends nav-icon"></i>
                             <p>
@@ -179,7 +179,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./cadastrar-supervisor.html" class="nav-link">
+                                <a href="./cadastrar-supervisor.html" class="nav-link active">
                                     <i class="fas fa-user-plus nav-icon"></i>
                                     <p>Cadastrar supervisor</p>
                                 </a>
@@ -293,14 +293,14 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1 class="m-0">Cadastrar Portador</h1>
+                                <h1 class="m-0">Cadastrar Supervisor</h1>
                             </div>
                             <!-- /.col -->
 
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="./index.html">Voltar</a></li>
-                                    <li class="breadcrumb-item active">Cadastrar portador</li>
+                                    <li class="breadcrumb-item active">Cadastrar supervisor</li>
                                 </ol>
                             </div>
                             <!-- /.row -->
@@ -319,7 +319,7 @@
                                         <!-- cards -->
                                         <div class="card-header">
                                             <!-- /.cardheader -->
-                                            <h3 class="card-title">Dados Portador</h3>
+                                            <h3 class="card-title">Dados Supervisor</h3>
                                         </div>
                                         <!-- /.cardheader -->
                                         <!-- Incio do form -->
@@ -371,10 +371,10 @@
                                                     <div class="col-md-6">
                                                         <label for="tipo-doc2">Tipo de Documento</label>
                                                         <select class="form-control" id="tipo-doc2" name="tipo-doc2">
-                                                            <option value="0" selected disabled>Selecionar</option>
-                                                            <option value="1">CPF</option>
-                                                            <option value="2">CRM</option>
-                                                            <option value="3">Passaporte</option>
+                                                            <option value="" selected disabled>Selecionar</option>
+                                                            <option value="CPF">CPF</option>
+                                                            <option value="CRM">CRM</option>
+                                                            <option value="Passaporte">Passaporte</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-6">
@@ -401,14 +401,7 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <label for="country">País</label> 
-                                                        <select class="form-control" id="country" name="pais">
-                                                            <option value="" selected disabled>Selecionar</option>
-                                                            <option value="Brasil">Brasil</option>
-                                                            <option value="Estados Unidos">Estados Unidos</option>
-                                                            <option value="Argentina">Argentina</option>
-                                                            <option value="Inglaterra">Inglaterra</option>
-                                                            <option value="Japão">Japão</option>
-                                                        </select>
+                                                        <input type="text" class="form-control" id="country" name="pais">
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="postal-code">CEP</label> 
@@ -422,7 +415,7 @@
                                                     </div>
                                                     <div class="form-group col-6">
                                                         <label for="logrd-num">Numero</label>
-                                                        <input type="text" class="form-control" id="logrd-num" name="numero" placeholder="60">
+                                                        <input type="number" class="form-control" id="logrd-num" name="numero" placeholder="60">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -495,7 +488,7 @@
                             <p></p>
                         </div>
                         <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='./index.html'">Finalizar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Finalizar</button>
                         </div>
                     </div>
                     <!-- /.modal-content -->
@@ -550,80 +543,6 @@
         <script src="../public/dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="../public/dist/js/demo.js"></script>
-        <script src="./js.js"></script>
-        <!-- <script>
-            $(function() {
-                $.validator.setDefaults({
-                    submitHandler: function() {
-                        alert("Supervisor cadastrado com sucesso!");
-                    }
-                });
-                $('#form-cadastrar-supervisor').validate({
-                    rules: {
-                        nome: {
-                            required: true,
-                        },
-                        sobrenome: {
-                            required: true,
-                        },
-                        identidade: {
-                            required: true,
-                        },
-                        datadenascimento: {
-                            required: true,
-                        },
-                        email: {
-                            required: true,
-                            email: true,
-                        },
-                        contato: {
-                            required: true,
-                        },
-                        idunidade: {
-                            required: true,
-                        },
-                        nacionalidade: {
-                            required: true,
-                        },
-                        codigopostal: {
-                            required: true,
-                        },
-                        endereco: {
-                            required: true,
-                        },
-                        numero: {
-                            required: true,
-                        },
-                        complemento: {
-                            required: true,
-                        },
-                        subdiv1: {
-                            required: true,
-                        },
-                        subdiv2: {
-                            required: true,
-                        },
-                        subdiv3: {
-                            required: true,
-                        },
-
-                    },
-
-
-                    errorElement: 'span',
-                    errorPlacement: function(error, element) {
-                        error.addClass('invalid-feedback');
-                        element.closest('.form-group').append(error);
-                    },
-                    highlight: function(element, errorClass, validClass) {
-                        $(element).addClass('is-invalid');
-                    },
-                    unhighlight: function(element, errorClass, validClass) {
-                        $(element).removeClass('is-invalid');
-                    }
-                });
-            });
-        </script> -->
         <script>
             $(function () {
                 $('.select2').select2()
