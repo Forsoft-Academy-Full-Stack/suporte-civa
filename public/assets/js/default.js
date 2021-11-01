@@ -5,6 +5,8 @@ let title;
 let text;
 let confirmButtonText;
 let confirmButtonCollor;
+let statusInfo;
+let textInfo;
 let callback = () => { };
 
 
@@ -49,6 +51,26 @@ function swalAlertError(title, text, callback){
         confirmButtonText: 'Finalizar',
         confirmButtonColor: '#007bff'
     }).then(callback);
+}
+
+function swalAlertDelete(title, text, statusInfo, textInfo){
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#007bff',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Deletar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            statusInfo,
+            textInfo,
+            'success'
+          )
+        }
+      })
 }
 
 
