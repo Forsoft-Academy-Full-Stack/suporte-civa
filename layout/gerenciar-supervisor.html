@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>CIVA - Gerenciar Supervisor</title>
+        <title>CIVA - Gerenciar Gerente</title>
 
         <link rel="shortcut icon" href="../public/img/favicon-gs.svg" type="image/x-icon">
 
@@ -24,7 +24,29 @@
         
         <!-- Estilo pagina -->
         <link rel="stylesheet" href="../public/dist/css/adminlte.min.css">
-        <script src="js.js" defer></script>
+        <script src="../public/plugins/sweetalert2/sweetalert2.all.min.js" defer></script>
+        <!-- jQuery -->
+        <script src="./../public/plugins/jquery/jquery.min.js" defer></script>
+        <!-- Bootstrap 4 -->
+        <script src="./../public/plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+        <!-- Select2 -->
+        <script src="./../public/plugins/select2/js/select2.full.min.js" defer></script>
+    
+
+        <!-- AdminLTE App -->
+        <script src="./../public/dist/js/adminlte.min.js" defer></script>
+    
+        <!-- AXIOS -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+        <!-- PESQUISAR CEP -->
+        <script src="./../public/assets/js/searchCep.js" defer></script>
+        <!-- TODOS PAISES SELECT NACIONALIDADE -->
+        <script src="./../public/assets/js/getCountry.js" defer></script>
+    
+        <!-- AdminLTE for demo purposes -->
+        <script src="./../public/dist/js/demo.js" defer></script>
+        <script src="../public/assets/js/default.js" defer></script>
+        <script src="./../public/assets/js/gerenciar-supervisor.js" defer></script>
     </head>
 
     <body class="hold-transition sidebar-mini">
@@ -39,7 +61,7 @@
                         </a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="" class="nav-link">Gerente/Gerenciar supervisor</a>
+                        <a href="" class="nav-link">Suporte CIVA</a>
                     </li>
                 </ul>
             </nav>
@@ -80,7 +102,7 @@
                       </li>
                       <!-- ITEM GERENCIAR USUARIO DO MENU -->
           
-                      <li class="nav-item ">
+                      <li class="nav-item menu-open">
                         <a href="#" class="nav-link">
                             <!-- <i class="nav-icon fas fa-user-friends"></i> -->
                             <p>Suporte Civa
@@ -89,7 +111,7 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                        <li class="nav-item">
+                        <li class="nav-item ">
                           <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-user-friends"></i>
                             <p>
@@ -114,7 +136,7 @@
                         </li>
                     </ul>
                     <ul class="nav nav-treeview">
-                      <li class="nav-item ">
+                      <li class="nav-item">
                           <a href="#" class="nav-link">
                               <i class="fas fa-user-friends nav-icon"></i>
                               <p>
@@ -166,8 +188,8 @@
                       </li>
                   </ul>
                   <ul class="nav nav-treeview">
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link">
+                    <li class="menu-open">
+                        <a href="#" class="nav-link active">
                             <i class="fas fa-user-friends nav-icon"></i>
                             <p>
                                 Supervisor
@@ -301,7 +323,7 @@
                             <!-- /.col -->
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="./consultar-supervisor.html">Voltar</a></li>
+                                    <li class="breadcrumb-item"><a href="index.html">Voltar</a></li>
                                     <li class="breadcrumb-item active">Gerenciar Supervisor</li>
                                 </ol>
                             </div>
@@ -319,168 +341,174 @@
                             <div class="col-12 mb-4">
                                 <div class="card card-primary">
                                     <div class="card-header">
-                                        <h3 class="card-title">Dados supervisor</h3>
+                                        <h3 class="card-title">Dados Gestor nacional</h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <!-- Incio do form -->
-                                    <form action="#" id="form-save" method="post" novalidate="novalidate">
-                                        <div class="p-2">
+                                    <!-- Incio do form -->
+                                    <form id="form-meus-dados">
+                                        <div class="card-body">
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="form-group col-xl-6">
                                                     <label for="name">Nome</label>
-                                                    <input type="text" class="form-control" id="name" value="Maria" name="nome" disabled>
+                                                    <input type="text" id="name" name="name" class="form-control"
+                                                        value="João">
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="form-group col-xl-6">
                                                     <label for="surname">Sobrenome</label>
-                                                    <input type="text" class="form-control" id="surname" value="Almeida" name="sobrenome" disabled>
+                                                    <input type="text" id="surname" name="surname" class="form-control"
+                                                        value="Silva">
                                                 </div>
                                             </div>
+    
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="form-group col-xl-6">
                                                     <label for="date-birth">Data de Nascimento</label>
-                                                    <input type="date" class="form-control" id="date-birth" value="29/07/1980" name="datadenascimento" disabled>
+                                                    <input type="date" id="date-birth" name="date-birth"
+                                                        class="form-control" value="1994-06-11">
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <label for="nationality">Nacionalidade</label>
-                                                    <select class="form-control" id="nationality" name="nacionalidade" disabled>
-                                                        <option value="" disabled>Selecionar</option>
-                                                        <option value="Brasil" selected >Brasil</option>
-                                                        <option value="Estados Unidos">Estados Unidos</option>
-                                                        <option value="Argentina">Argentina</option>
-                                                        <option value="Inglaterra">Inglaterra</option>
-                                                        <option value="Japão">Japão</option>
+                                                <div class="form-group col-xl-6">
+                                                    <label for="nacionalidade">Nacionalidade</label>
+                                                    <select class="select2 select2-hidden-accessible" style="width: 100%;"
+                                                        tabindex="-1" aria-hidden="true" id="nacionalidade"
+                                                        name="nacionalidade">
+                                                        <option selected value="BR">Brazil</option>
                                                     </select>
                                                 </div>
+    
                                             </div>
+    
                                             <div class="row">
-                                                <div class="col-md-6">
-                                                    <label for="tipo-doc">Tipo de Documento</label>
-                                                    <select class="form-control" id="tipo-doc" name="tipo-doc" disabled>
-                                                        <option value="" disabled>Selecionar</option>
-                                                        <option value="CPF" selected>CPF</option>
-                                                        <option value="CRM">CRM</option>
-                                                        <option value="Passaporte">Passaporte</option>
+                                                <div class="form-group col-xl-6">
+                                                    <label for="tipo-doc-1">Tipo de Documento</label>
+                                                    <select class="select2 select2-hidden-accessible" style="width: 100%;"
+                                                        tabindex="-1" aria-hidden="true" id="tipo-doc-1" name="tipo-doc-1">
+                                                        <option selected value="passaporte">Passaporte</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <label for="doc1">Documentação 1</label>
-                                                    <input type="text" class="form-control" id="doc1" value="102.256.356-76" name="doc1" disabled>
+                                                <div class="form-group col-xl-6">
+                                                    <label for="doc-1">Documentação 1</label>
+                                                    <input type="text" id="doc-1" name="doc-1" class="form-control"
+                                                        value="3123123">
                                                 </div>
                                             </div>
+    
                                             <div class="row">
-                                                <div class="col-md-6">
-                                                    <label for="tipo-doc2">Tipo de Documento</label>
-                                                    <select class="form-control" id="tipo-doc2" name="tipo-doc2" disabled>
-                                                        <option value="" disabled>Selecionar</option>
-                                                        <option value="CPF">CPF</option>
-                                                        <option value="CRM" selected>CRM</option>
-                                                        <option value="Passaporte">Passaporte</option>
+                                                <div class="form-group col-xl-6">
+                                                    <label for="tipo-doc-2">Tipo de Documento</label>
+                                                    <select class="select2 select2-hidden-accessible" style="width: 100%;"
+                                                        tabindex="-1" aria-hidden="true" id="tipo-doc-2" name="tipo-doc-2">
+                                                        <option value="identidade">Identidade</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <label for="doc2">Documentação 2</label>
-                                                    <input type="text" class="form-control" id="doc2" value="7529-RJ" name="doc2" disabled>
+                                                <div class="form-group col-xl-6">
+                                                    <label for="doc-2">Documentação 2</label>
+                                                    <input type="text" id="doc-2" name="doc-2" class="form-control"
+                                                        value="98798798987">
                                                 </div>
                                             </div>
+    
                                             <div class="row">
-                                                <div class="col-md-6">
-                                                    <label for="tipo-doc3">Tipo de Documento</label>
-                                                    <select class="form-control" id="tipo-doc3" name="tipo-doc3" disabled>
-                                                        <option value="" disabled>Selecionar</option>
-                                                        <option value="CPF">CPF</option>
-                                                        <option value="CRM">CRM</option>
-                                                        <option value="Passaporte" selected>Passaporte</option>
+                                                <div class="form-group col-xl-6">
+                                                    <label for="tipo-doc-3">Tipo de Documento</label>
+                                                    <select class="select2 select2-hidden-accessible" style="width: 100%;"
+                                                        tabindex="-1" aria-hidden="true" id="tipo-doc-3" name="tipo-doc-3">
+                                                        <option selected value="cpf">CPF</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <label for="doc3">Documentação 3</label>
-                                                    <input type="text" class="form-control" id="doc3" value="BR12345" name="doc3" disabled>
+                                                <div class="form-group col-xl-6">
+                                                    <label for="doc-3">Documentação 3</label>
+                                                    <input type="text" id="doc-3" name="doc-3" class="form-control"
+                                                        value="9879898787">
                                                 </div>
                                             </div>
+    
                                             <hr>
+    
                                             <div class="row">
-                                                <div class="col-md-6">
-                                                    <label for="country">País</label>
-                                                    <select class="form-control" id="country" name="pais" disabled>
-                                                        <option value="" disabled>Selecionar</option>
-                                                        <option value="Brasil" selected>Brasil</option>
-                                                        <option value="Estados Unidos">Estados Unidos</option>
-                                                        <option value="Argentina">Argentina</option>
-                                                        <option value="Inglaterra">Inglaterra</option>
-                                                        <option value="Japão">Japão</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-6">
-                                                    <label for="postal-code">CEP</label>
-                                                    <input type="text" class="form-control" id="postal-code" name="cep" value="22758-006" disabled> 
+                                                <div class="form-group col-xl-12">
+                                                    <label for="pais">País</label>
+                                                    <input type="text" id="pais" name="pais" class="form-control"
+                                                        value="Brazil">
                                                 </div>
                                             </div>
+    
+    
                                             <div class="row">
-                                                <div class="form-group col-6">
-                                                    <label for="logrd-name">Endereço</label>
-                                                    <input type="text" class="form-control" id="logrd-name" name="endereco" value="Av Rio Branco" disabled>
-                                                </div>
-                                                <div class="form-group col-6">
-                                                    <label for="logrd-num">Numero</label>
-                                                    <input type="number" class="form-control" id="logrd-num" name="numero" value="60" disabled>
+    
+                                                <div class="form-group col-xl-12">
+                                                    <label for="codigopostal">CEP</label>
+                                                    <input type="text" class="form-control" id="codigopostal"
+                                                        name="codigopostal" placeholder="65789-784" maxlength="9"
+                                                        value="6546756">
                                                 </div>
                                             </div>
+    
+    
                                             <div class="row">
-                                                <div class="form-group col-12">
+                                                <div class="form-group col-xl-6">
+                                                    <label for="endereco">Endereço</label>
+                                                    <input type="text" id="endereco" name="endereco" class="form-control"
+                                                        value="Rua 2">
+                                                </div>
+    
+                                                <div class="form-group col-xl-6">
+                                                    <label for="numero">Número</label>
+                                                    <input type="number" class="form-control" id="numero" name="numero"
+                                                        placeholder="123" maxlength="9" value="1243">
+                                                </div>
+                                            </div>
+    
+                                            <div class="row">
+                                                <div class="form-group col-xl-6">
                                                     <label for="complemento">Complemento</label>
-                                                    <input type="text" class="form-control" id="complemento" name="complemento" value="Rio Branco" disabled>
+                                                    <input type="text" id="complemento" name="complemento"
+                                                        class="form-control" value="bloco 5">
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label for="municipio">Municipio</label>
-                                                    <select class="form-control" id="municipio" name="municipio" disabled>
-                                                        <option disabled>Selecionar</option> 
-                                                        <option>Niteroi</option>
-                                                        <option>São Gonçalo</option>
-                                                        <option selected>Rio de Janeiro</option>
-                                                        <option>Itaborai</option>
-                                                        <option>Marica</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6">
+    
+                                                <div class="form-group col-xl-6">
                                                     <label for="bairro">Bairro</label>
-                                                    <select class="form-control" id="bairro" name="bairro" disabled>
-                                                        <option disabled>Selecionar</option> 
-                                                        <option selected>Niteroi</option>
-                                                        <option>São Gonçalo</option>
-                                                        <option>Rio de Janeiro</option>
-                                                        <option>Itaborai</option>
-                                                        <option>Marica</option>
-                                                    </select>
+                                                    <input type="text" class="form-control" id="bairro" name="bairro"
+                                                        placeholder="" maxlength="9" value="Vila peri">
                                                 </div>
+    
                                             </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <label for="state">Estado</label>
-                                                    <select class="form-control" id="state" name="estado" disabled>
-                                                        <option disabled>Selecionar</option>
-                                                        <option selected>Rio de Janeiro</option>
-                                                        <option>São Paulo</option>
-                                                        <option>Minas Gerais</option>
-                                                        <option>Rio Grande do Sul</option>
-                                                        <option>Bahia</option>
-                                                    </select>
-                                                </div>
-                                            </div>                                        
+    
                                             <div class="row">
                                                 <div class="form-group col-xl-6">
-                                                    <label for="telf">Contato</label>
-                                                    <input type="number" class="form-control" id="telf" name="telf" value="21 9 8788-9894" disabled>
+                                                    <label for="municipio">Municipio</label>
+                                                    <input type="text" id="municipio" name="municipio" class="form-control"
+                                                        value="Ocas">
+                                                </div>
+    
+                                                <div class="form-group col-xl-6">
+                                                    <label for="estado">Estado</label>
+                                                    <input type="text" class="form-control" id="estado" name="estado"
+                                                        placeholder="Ceará" maxlength="9" value="Pará">
+                                                </div>
+    
+                                            </div>
+    
+                                            <div class="row">
+                                                <div class="form-group col-xl-6">
+                                                    <label for="contato1">contato</label>
+                                                    <input type="tel" class="form-control" id="contato1" name="contato1"
+                                                        placeholder="" maxlength="9" value="8776544567">
                                                 </div>
                                                 <div class="form-group col-xl-6">
-                                                    <label for="email">Email</label>
-                                                    <input type="email" class="form-control" id="email" name="email" value="maria1612_almeida@gmail.com" disabled>
+                                                    <label for="email">E-mail</label>
+                                                    <input type="email" id="email" name="email" class="form-control"
+                                                        placeholder="" value="user@email.com">
                                                 </div>
                                             </div>
                                             <hr>
-                                            <a href="#" class="btn btn-danger" id="btnExcluir">Excluir</a>
+                                            <div class="row">
+                                                <div class="col-12 mb-4">
+                                                    <button type="button" class="btn btn-danger btn-xl" id="excluir">Excluir</button>
+                                                </div>
+                                            </div>
                                         </div>
+    
                                     </form>
                                     <!-- /.form ending -->
                                 </div>
@@ -488,66 +516,67 @@
                             </div>
                         </div>
                         <!-- /.row -->
-                    </div>
-                    <!-- /.container-fluid -->
-                    <div class="row">
-                        <div class="col-12 mb-4">
-                            <div class="card card-primary">
-                                <div class="card-header">
-                                    <h3 class="card-title">Unidades Vinculadas</h3>
-                                    <div class="card-tools">
-                                        <div class="input-group input-group-sm" style="width: 150px;">
-                                            <div class="input-group-append">
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Unidades Vinculadas</h3>
+                                        <div class="card-tools">
+                                            <div class="input-group input-group-sm" style="width: 150px;">
+                                                <div class="input-group-append">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body table-responsive p-0">
-                                    <table class="table table-hover text-nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                                <th>Estado</th>
-                                                <th>CEP</th>
-                                                <th>Identificador</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Hopital Pan</td>
-                                                <td>Rio de Janeiro</td>
-                                                <td>12016-102</td>
-                                                <td>215648</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Hopital Pan</td>
-                                                <td>Rio de Janeiro</td>
-                                                <td>12016-102</td>
-                                                <td>215648</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Hopital Pan</td>
-                                                <td>Rio de Janeiro</td>
-                                                <td>12016-102</td>
-                                                <td>215648</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <hr>
-                                    <div class="d-flex justify-content-between align-items-center ml-2 mb-2">
-                                        <a href="./vincular-unidade.html" class="btn btn-success btn-xs">Vincular Unidade</a>
+                                    <!-- /.card-header -->
+                                    <div class="card-body table-responsive p-0">
+                                        <table class="table table-hover text-nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nome</th>
+                                                    <th>Estado</th>
+                                                    <th>CEP</th>
+                                                    <th>Identificador</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Hopital Pan</td>
+                                                    <td>Rio de Janeiro</td>
+                                                    <td>12016-102</td>
+                                                    <td>215648</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Hopital Pan</td>
+                                                    <td>Rio de Janeiro</td>
+                                                    <td>12016-102</td>
+                                                    <td>215648</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Hopital Pan</td>
+                                                    <td>Rio de Janeiro</td>
+                                                    <td>12016-102</td>
+                                                    <td>215648</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <hr>
+                                        <div class="d-flex justify-content-between align-items-center ml-2 mb-2">
+                                            <a href="./vincular-unidade.html" class="btn btn-success btn-xs">Vincular Unidade</a>
+                                        </div>
                                     </div>
+                                    <!-- /.card-body -->
                                 </div>
-                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <button type="button" class="btn btn-primary btn-lg" id="salvar">Salvar</button>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 mb-4">
-                            <button type="submit" class="btn btn-primary btn-lg" form="form-gerenciar-supervisor">Salvar</button>
-                        </div>
-                    </div>
+                    <!-- /.container-fluid -->
+                   
                 </div>
 
                 <!-- modal -->
@@ -606,25 +635,8 @@
 
         <!-- REQUIRED SCRIPTS ------------------------------------------------------->
 
-        <!-- jQuery -->
-        <script src="../public/plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
-        <script src="../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- Select2 -->
-        <script src="../public/plugins/select2/js/select2.full.min.js"></script>
 
+        
 
-        <!-- AdminLTE App -->
-        <script src="../public/dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="../public/dist/js/demo.js"></script>
-
-        <script>
-            $(function() {
-                $('.select2').select2()
-            });
-        </script>
-
-        <script rel="text/javascript" src="../public/dist/js/gerenciar-supervisor.js"></script>
     </body>
 </html>
