@@ -1,3 +1,3 @@
 # suporte-civa
 
-[Ver página](https://github.com/Forsoft-Academy-Full-Stack/suporte-civa/tree/versao-descontinuada/layout/index.html)
+[Ver página](https://forsoft-academy-full-stack.github.io/suporte-civa/layout/index.html)
