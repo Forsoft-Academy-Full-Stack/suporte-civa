@@ -80,7 +80,7 @@
         <!-- MENU Main Sidebar Container ------------------------------------>
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="./index.html" class="brand-link">
+            <a href="../index.html" class="brand-link">
                 <img src="./../public/img/favicon-gs.svg" alt="AdminLTE Logo" class="brand-image img-circle"
                     style="opacity: .8">
                 <span class="brand-text font-weight-light">CIVA</span>
@@ -104,7 +104,7 @@
                         data-accordion="false">
                         <!-- ITENS DO MENU -->
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="../index.html" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
                                     Home
@@ -373,22 +373,39 @@
                                                     value="Adams">
                                             </div>
                                         </div>
-
+                                        
                                         <div class="row">
                                             <div class="form-group col-xl-6">
-                                                <label for="date-birth">Data de Nascimento</label>
-                                                <input type="date" id="date-birth" name="date-birth"
-                                                    class="form-control" value="1945-05-17">
-                                            </div>
-                                            <div class="form-group col-xl-6">
-                                                <label for="nacionalidade">Nacionalidade</label>
-                                                <select class="select2 select2-hidden-accessible" style="width: 100%;"
-                                                    tabindex="-1" aria-hidden="true" id="nacionalidade"
-                                                    name="nacionalidade">
-                                                    <option value="BR">Brazil</option>
+                                                <label for="exampleFormControlSelect1">Gênero</label>
+                                                <select id="genero" name="genero" class="select2 select2-hidden-accessible"
+                                                    style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                    <option value="" selected disabled>Selecionar Gênero
+                                                    </option>
+                                                    <option value="3">Homem cis</option>
+                                                    <option value="4">Mulher cis</option>
+                                                    <option value="5" selected>Homem Trans</option>
+                                                    <option value="6">Mulher Trans</option>
+                                                    <option value="7">Outro</option>
+                                                    <option value="8">Prefiro não declarar</option>
                                                 </select>
                                             </div>
 
+                                            <div class="form-group col-xl-6">
+                                                <label for="date-birth">Data de Nascimento</label>
+                                                <input type="date" id="date-birth" name="date-birth"
+                                                    class="form-control" value="1994-03-04">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-xl-12">
+                                                <label for="nacionalidade">Nacionalidade</label>
+                                                <select class="select2 select2-hidden-accessible"
+                                                    style="width: 100%;" tabindex="-1" aria-hidden="true"
+                                                    id="nacionalidade" name="nacionalidade">
+                                                 
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <div class="row">
@@ -396,43 +413,13 @@
                                                 <label for="tipo-doc-1">Tipo de Documento</label>
                                                 <select class="select2 select2-hidden-accessible" style="width: 100%;"
                                                     tabindex="-1" aria-hidden="true" id="tipo-doc-1" name="tipo-doc-1">
-                                                    <option value="BR">Passaporte</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-xl-6">
-                                                <label for="doc-1">Documentação 1</label>
-                                                <input type="text" id="doc-1" name="doc-1" class="form-control"
-                                                    value="23123213123">
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="form-group col-xl-6">
-                                                <label for="tipo-doc-2">Tipo de Documento</label>
-                                                <select class="select2 select2-hidden-accessible" style="width: 100%;"
-                                                    tabindex="-1" aria-hidden="true" id="tipo-doc-2" name="tipo-doc-2">
                                                     <option value="BR">Identidade</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-xl-6">
-                                                <label for="doc-2">Documentação 2</label>
-                                                <input type="text" id="doc-2" name="doc-2" class="form-control"
-                                                    value="12312321321">
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="form-group col-xl-6">
-                                                <label for="tipo-doc-3">Tipo de Documento</label>
-                                                <select class="select2 select2-hidden-accessible" style="width: 100%;"
-                                                    tabindex="-1" aria-hidden="true" id="tipo-doc-3" name="tipo-doc-3">
-                                                    <option value="BR">CPF</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-xl-6">
-                                                <label for="doc-3">Documentação 3</label>
-                                                <input type="text" id="doc-3" name="doc-3" class="form-control"
-                                                    value="000.000.000-87">
+                                                <label for="doc-1">Documentação</label>
+                                                <input type="text" id="doc-1" name="doc-1" class="form-control"
+                                                    value="23123213123">
                                             </div>
                                         </div>
 
@@ -519,15 +506,8 @@
                                             </div>
                                         </div>
 
-
                                         <div class="row">
-                                            <div class="form-group col-xl-6">
-                                                <label for="contato2">contato</label>
-                                                <input type="tel" class="form-control" id="contato2" name="contato2"
-                                                placeholder="Ex: 000000-000" maxlength="9" value="8599667733">
-                                            </div>
-
-                                            <div class="form-group col-xl-6">
+                                            <div class="form-group col-xl-12">
                                                 <label for="email">E-mail</label>
                                                 <input type="email" id="email" name="email"
                                                     class="form-control" value="frank@sinatra.com">

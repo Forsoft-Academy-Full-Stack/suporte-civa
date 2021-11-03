@@ -25,7 +25,7 @@
 
   <!-- Estilo pagina -->
   <link rel="stylesheet" href="./../public/dist/css/adminlte.min.css">
-    <!-- REQUIRED SCRIPTS -->
+  <!-- REQUIRED SCRIPTS -->
 
   <!-- jQuery -->
   <script src="../public/plugins/jquery/jquery.min.js" defer></script>
@@ -67,9 +67,11 @@
     <!-- /.navbar ------------------------------------------------------->
 
     <!-- MENU Main Sidebar Container ------------------------------------>
+
+    <!-- MENU Main Sidebar Container ------------------------------------>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="./index.html" class="brand-link">
+      <a href="../index.html" class="brand-link">
         <img src="./../public/img/favicon-gs.svg" alt="AdminLTE Logo" class="brand-image img-circle"
           style="opacity: .8">
         <span class="brand-text font-weight-light">CIVA</span>
@@ -87,14 +89,12 @@
           </div>
         </div>
 
-
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- ITENS DO MENU -->
             <li class="nav-item">
-              <a href="./index.html" class="nav-link">
+              <a href="../index.html" class="nav-link">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
                   Home
@@ -102,107 +102,215 @@
               </a>
             </li>
             <!-- ITEM GERENCIAR USUARIO DO MENU -->
-            <li class="nav-item">
+
+            <li class="nav-item ">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-user-friends"></i>
-                <p>
-                  Portador CIVA
+                <!-- <i class="nav-icon fas fa-user-friends"></i> -->
+                <p>Suporte Civa
                   <i class="right fas fa-angle-left"></i>
 
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./consultar-portador.html" class="nav-link">
-                    <i class="fas fa-search nav-icon"></i>
-                    <p>Consultar Portador</p>
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-user-friends"></i>
+                    <p>
+                      Portador CIVA
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
                   </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="./consultar-portador.html" class="nav-link">
+                        <i class="fas fa-search nav-icon"></i>
+                        <p>Consultar Portador</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="./cadastrar-portador.html" class="nav-link">
+                        <i class="fas fa-user-plus nav-icon"></i>
+                        <p>Cadastrar Portador</p>
+                      </a>
+                    </li>
+                  </ul>
                 </li>
-                <li class="nav-item">
-                  <a href="./cadastrar-portador.html" class="nav-link">
-                    <i class="fas fa-user-plus nav-icon"></i>
-                    <p>Cadastrar Portador</p>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item ">
+                  <a href="#" class="nav-link">
+                    <i class="fas fa-user-friends nav-icon"></i>
+                    <p>
+                      Gerente
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
                   </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="./consultar-gerente.html" class="nav-link">
+                        <i class="fas fa-clipboard-check nav-icon"></i>
+                        <p>Consultar Gerente</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="./cadastrar-gerente.html" class="nav-link">
+                        <i class="fas fa-user-plus nav-icon"></i>
+                        <p>Cadastrar Gerente</p>
+                      </a>
+                    </li>
+
+                  </ul>
                 </li>
-                <li class="nav-item">
-                  <a href="vacinacao-internacional.html" class="nav-link">
-                    <i class="fas fa-stethoscope nav-icon"></i>
-                    <p>Vacinação internacional</p>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item ">
+                  <a href="#" class="nav-link">
+                    <i class="fas fa-user-friends nav-icon"></i>
+                    <p>
+                      Gestores nacionais
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
                   </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="./consultar-gestor-nacional.html" class="nav-link">
+                        <i class="fas fa-clipboard-check nav-icon"></i>
+                        <p>Consultar Gestor nacional</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="./cadastrar-gestor-nacional.html" class="nav-link">
+                        <i class="fas fa-user-plus nav-icon"></i>
+                        <p>Cadastrar Gestor nacional</p>
+                      </a>
+                    </li>
+
+                  </ul>
                 </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item ">
+                  <a href="#" class="nav-link">
+                    <i class="fas fa-user-friends nav-icon"></i>
+                    <p>
+                      Supervisor
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="./consultar-supervisor.html" class="nav-link">
+                        <i class="fas fa-clipboard-check nav-icon"></i>
+                        <p>Consultar supervisor</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="./cadastrar-supervisor.html" class="nav-link">
+                        <i class="fas fa-user-plus nav-icon"></i>
+                        <p>Cadastrar supervisor</p>
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
+              </ul>
+
+              <ul class="nav nav-treeview">
+                <li class="nav-item ">
+                  <a href="#" class="nav-link">
+                    <i class="fas fa-syringe nav-icon"></i>
+                    <p>
+                      Unidades
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="./consultar-unidades.html" class="nav-link">
+                        <i class="fas fa-search nav-icon"></i>
+                        <p>Consultar unidade </p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="./cadastrar-unidade.html" class="nav-link">
+                        <i class="fas fa-mouse-pointer nav-icon"></i>
+                        <p>Cadastrar Unidade</p>
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
+              </ul>
+
+
+              <!-- ITEM RELATORIO USUARIO DO MENU -->
+            <li class="nav-item">
+              <a href="./relatorio.html" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  Relatorio
+                </p>
+              </a>
             </li>
-          </ul>
-          </li>
 
-          <!-- ITEM RELATORIO USUARIO DO MENU -->
-          <li class="nav-item">
-            <a href="./relatorio.html" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Relatorio
-              </p>
-            </a>
-          </li>
-
-          <!-- ITEM PERFIL DO MENU -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-user-circle"></i>
-              <p>
-                Perfil
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./meus-dados.html" class="nav-link">
-                  <i class="fas fa-address-card nav-icon"></i>
-                  <p>
-                    Meus dados
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./idioma.html" class="nav-link">
-                  <i class="fas fa-language nav-icon"></i>
-                  <p>
-                    Mudar Idioma
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./manual.html" class="nav-link">
-                  <i class="fas fa-question-circle nav-icon"></i>
-                  <p>
-                    Manual CIVA
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./solicitacoes.html" class="nav-link active">
-                  <i class="fas fa-inbox nav-icon"></i>
-                  <p>
-                    Solicitações pendentes
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-sign-out-alt nav-icon"></i>
-                  <p>
-                    Sair
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </li>
+            <!-- ITEM PERFIL DO MENU -->
+            <li class="menu-open">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-user-circle"></i>
+                <p>
+                  Perfil
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./meus-dados.html" class="nav-link ">
+                    <i class="fas fa-address-card nav-icon"></i>
+                    <p>
+                      Meus dados
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./idioma.html" class="nav-link">
+                    <i class="fas fa-language nav-icon"></i>
+                    <p>
+                      Mudar Idioma
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./manual.html" class="nav-link">
+                    <i class="fas fa-question-circle nav-icon"></i>
+                    <p>
+                      Manual CIVA
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./solicitacoes.html" class="nav-link active">
+                    <i class="fas fa-inbox nav-icon"></i>
+                    <p>
+                      Solicitações pendentes
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="fas fa-sign-out-alt nav-icon"></i>
+                    <p>
+                      Sair
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
       </div>
       <!-- /.sidebar ------------------------------------------------------>
     </aside>
-
 
 
 
@@ -218,7 +326,7 @@
 
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="./index.html">Voltar</a></li>
+                <li class="breadcrumb-item"><a href="../index.html">Voltar</a></li>
                 <li class="breadcrumb-item active">Home</li>
               </ol>
             </div>
@@ -258,7 +366,8 @@
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between align-items-center mx-3 mb-3">
-                  <button type="button" onclick="cancelarSolicitacao()" class="btn btn-outline-danger">Cancelar solicitação</button>
+                  <button type="button" onclick="cancelarSolicitacao()" class="btn btn-outline-danger">Cancelar
+                    solicitação</button>
 
 
                 </div>
@@ -281,7 +390,8 @@
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between align-items-center mx-3 mb-3">
-                  <button type="button" onclick="cancelarSolicitacao()" class="btn btn-outline-danger">Cancelar solicitação</button>
+                  <button type="button" onclick="cancelarSolicitacao()" class="btn btn-outline-danger">Cancelar
+                    solicitação</button>
 
                 </div>
               </div>
@@ -303,7 +413,8 @@
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between align-items-center mx-3 mb-3">
-                  <button type="button" onclick="cancelarSolicitacao()" class="btn btn-outline-danger">Cancelar solicitação</button>
+                  <button type="button" onclick="cancelarSolicitacao()" class="btn btn-outline-danger">Cancelar
+                    solicitação</button>
 
                 </div>
               </div>

@@ -74,7 +74,7 @@
         <!-- MENU Main Sidebar Container ------------------------------------>
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="./index.html" class="brand-link">
+            <a href="../index.html" class="brand-link">
                 <img src="./../public/img/favicon-gs.svg" alt="AdminLTE Logo" class="brand-image img-circle"
                     style="opacity: .8">
                 <span class="brand-text font-weight-light">CIVA</span>
@@ -98,7 +98,7 @@
                         data-accordion="false">
                         <!-- ITENS DO MENU -->
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="../index.html" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
                                     Home
@@ -357,30 +357,48 @@
                                             <div class="form-group col-xl-6">
                                                 <label for="name">Nome</label>
                                                 <input type="text" id="name" name="name" class="form-control"
-                                                    value="João">
+                                                    placeholder="João">
                                             </div>
                                             <div class="form-group col-xl-6">
                                                 <label for="surname">Sobrenome</label>
                                                 <input type="text" id="surname" name="surname" class="form-control"
-                                                    value="Silva">
+                                                    placeholder="Silva">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="form-group col-xl-6">
-                                                <label for="date-birth">Data de Nascimento</label>
-                                                <input type="date" id="date-birth" name="date-birth"
-                                                    class="form-control" value="1994-06-11">
-                                            </div>
-                                            <div class="form-group col-xl-6">
-                                                <label for="nacionalidade">Nacionalidade</label>
-                                                <select class="select2 select2-hidden-accessible" style="width: 100%;"
-                                                    tabindex="-1" aria-hidden="true" id="nacionalidade"
-                                                    name="nacionalidade">
-                                                    <option selected value="BR">Brazil</option>
+                                                <label for="genero">Gênero</label>
+                                                <select id="genero" name="genero" class="select2 select2-hidden-accessible"
+                                                    style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                                    <option selected value="" selected disabled>Selecionar Gênero
+                                                    </option>
+                                                    <option value="3">Homem cis</option>
+                                                    <option value="4">Mulher cis</option>
+                                                    <option value="5">Homem Trans</option>
+                                                    <option value="6">Mulher Trans</option>
+                                                    <option value="7">Outro</option>
+                                                    <option value="8">Prefiro não declarar</option>
                                                 </select>
                                             </div>
 
+                                            <div class="form-group col-xl-6">
+                                                <label for="date-birth">Data de Nascimento</label>
+                                                <input type="date" id="date-birth" name="date-birth"
+                                                    class="form-control" placeholder="1993-05-19">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-xl-12">
+                                                <label for="nacionalidade">Nacionalidade</label>
+                                                <select class="select2 select2-hidden-accessible"
+                                                    style="width: 100%;" tabindex="-1" aria-hidden="true"
+                                                    id="nacionalidade" name="nacionalidade">
+                                                    <option selected value="" selected disabled>Selecionar Nacionalidade
+                                                    </option>
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <div class="row">
@@ -392,39 +410,9 @@
                                                 </select>
                                             </div>
                                             <div class="form-group col-xl-6">
-                                                <label for="doc-1">Documentação 1</label>
+                                                <label for="doc-1">Documentação</label>
                                                 <input type="text" id="doc-1" name="doc-1" class="form-control"
-                                                    value="3123123">
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="form-group col-xl-6">
-                                                <label for="tipo-doc-2">Tipo de Documento</label>
-                                                <select class="select2 select2-hidden-accessible" style="width: 100%;"
-                                                    tabindex="-1" aria-hidden="true" id="tipo-doc-2" name="tipo-doc-2">
-                                                    <option value="identidade">Identidade</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-xl-6">
-                                                <label for="doc-2">Documentação 2</label>
-                                                <input type="text" id="doc-2" name="doc-2" class="form-control"
-                                                    value="98798798987">
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="form-group col-xl-6">
-                                                <label for="tipo-doc-3">Tipo de Documento</label>
-                                                <select class="select2 select2-hidden-accessible" style="width: 100%;"
-                                                    tabindex="-1" aria-hidden="true" id="tipo-doc-3" name="tipo-doc-3">
-                                                    <option selected value="cpf">CPF</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-xl-6">
-                                                <label for="doc-3">Documentação 3</label>
-                                                <input type="text" id="doc-3" name="doc-3" class="form-control"
-                                                    value="9879898787">
+                                                    placeholder="BR12345678">
                                             </div>
                                         </div>
 
@@ -434,7 +422,7 @@
                                             <div class="form-group col-xl-12">
                                                 <label for="pais">País</label>
                                                 <input type="text" id="pais" name="pais" class="form-control"
-                                                    value="Brazil">
+                                                    placeholder="Brazil">
                                             </div>
                                         </div>
 
@@ -445,7 +433,7 @@
                                                 <label for="codigopostal">CEP</label>
                                                 <input type="text" class="form-control" id="codigopostal"
                                                     name="codigopostal" placeholder="65789-784" maxlength="9"
-                                                    value="6546756">
+                                                    placeholder="63544723">
                                             </div>
                                         </div>
 
@@ -454,13 +442,13 @@
                                             <div class="form-group col-xl-6">
                                                 <label for="endereco">Endereço</label>
                                                 <input type="text" id="endereco" name="endereco" class="form-control"
-                                                    value="Rua 2">
+                                                    placeholder="Rua 2">
                                             </div>
 
                                             <div class="form-group col-xl-6">
                                                 <label for="numero">Número</label>
                                                 <input type="number" class="form-control" id="numero" name="numero"
-                                                    placeholder="123" maxlength="9" value="1243">
+                                                    placeholder="123" maxlength="9" value="">
                                             </div>
                                         </div>
 
@@ -468,42 +456,52 @@
                                             <div class="form-group col-xl-6">
                                                 <label for="complemento">Complemento</label>
                                                 <input type="text" id="complemento" name="complemento"
-                                                    class="form-control" value="bloco 5">
+                                                    class="form-control" placeholder="bloco 5">
                                             </div>
 
                                             <div class="form-group col-xl-6">
                                                 <label for="bairro">Bairro</label>
                                                 <input type="text" class="form-control" id="bairro" name="bairro"
-                                                    placeholder="" maxlength="9" value="Vila peri">
+                                                     maxlength="9" placeholder="Vila peri">
                                             </div>
 
                                         </div>
 
                                         <div class="row">
                                             <div class="form-group col-xl-6">
-                                                <label for="municipio">Municipio</label>
+                                                <label for="municipio">Município</label>
                                                 <input type="text" id="municipio" name="municipio" class="form-control"
-                                                    value="Ocas">
+                                                    placeholder="Ocas">
                                             </div>
 
                                             <div class="form-group col-xl-6">
                                                 <label for="estado">Estado</label>
                                                 <input type="text" class="form-control" id="estado" name="estado"
-                                                    placeholder="Ceará" maxlength="9" value="Pará">
+                                                    placeholder="Rio de Janeiro" maxlength="9" >
                                             </div>
 
                                         </div>
 
                                         <div class="row">
                                             <div class="form-group col-xl-6">
-                                                <label for="contato1">contato</label>
+                                                <label for="contato1">Contato</label>
                                                 <input type="tel" class="form-control" id="contato1" name="contato1"
-                                                    placeholder="" maxlength="9" value="8776544567">
+                                                     maxlength="9" placeholder="8776544567">
                                             </div>
+
                                             <div class="form-group col-xl-6">
+                                                <label for="locacao">Locação</label>
+                                                <input type="text" id="locacao" name="locacao" class="form-control"
+                                                    placeholder="Sua Locacao">
+                                            </div>
+                                           
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-xl-12">
                                                 <label for="email">E-mail</label>
                                                 <input type="email" id="email" name="email" class="form-control"
-                                                    placeholder="" value="user@email.com">
+                                                     placeholder="user@email.com">
                                             </div>
                                         </div>
                                     </div>

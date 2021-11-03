@@ -1,12 +1,10 @@
 $('.select2').select2();
 
 let campos = ["name", "surname", "date-birth",
-     "nacionalidade", "tipo-doc-1",
-    "doc-1", "genero", "pais",
+     "nacionalidade", "genero", "pais",
     "codigopostal", "endereco",
     "numero", "complemento", "bairro",
-    "municipio", "estado", "contato1", "email", "locacao"];
-
+    "municipio", "estado", "contato1", "locacao", "email"];
 
 
 let form = $("#form-meus-dados");
@@ -17,8 +15,8 @@ $("#salvar").click(function () {
     if (tratar_campos(campos)) {
         $.get("", form.serialize(), (data, status) => {
             if (status === 'success') {
-                title = 'Gestor nacional cadastrado com sucesso!';
-                text = "Cadastro realizada.";
+                title = 'Cadastro realizada com sucesso!';
+                text = "Cadastro realizado.";
                 swalAlertSuccess(title, text, callback);
 
             } else {
@@ -33,5 +31,6 @@ $("#salvar").click(function () {
         swalAlertError(title, text, callback);
     }
 });
+
 
 pegarPaises("nacionalidade");
